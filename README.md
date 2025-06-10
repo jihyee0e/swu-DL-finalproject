@@ -1,7 +1,29 @@
-### 4-2 딥러닝및응용 기말프로젝트
+# 텍스트 기반의 감정 분석과 긴급도 탐지 모델링
 
-### 텍스트 기반의 감정 분석과 긴급도 탐지 모델링 <br>
 : 긴급 상황을 텍스트 데이터를 통해 예측 & 사전 예방적인 조치를 위한 기초를 다지는 시스템 개발
+
+## 📁 프로젝트 구조
+
+```
+project/
+├── models/
+│   ├── __init__.py
+│   ├── model_lstm.py      # GloVe + LSTM 모델
+│   └── model_bert.py      # BERT 모델
+├── utils/
+│   ├── __init__.py
+│   ├── preprocessing.py   # 공통 전처리 함수들
+│   └── visualization.py   # 그래프 그리기 함수들
+├── data/
+│   └── glove.6B.100d.txt  # GloVe 임베딩 파일 (별도 다운로드 필요)
+├── main.py               # 메인 실행 파일
+├── requirements.txt      # 의존성 패키지
+├── tweet_emotions.csv    # 데이터셋
+└── README.md
+``` 
+
+## devel process
+
 - 데이터셋: kaggle - Emotion Detection from Text<br>
 ![image](https://github.com/user-attachments/assets/6b4a62e8-a3ed-4df2-ae32-d8412b05bfc5)
 
@@ -28,7 +50,7 @@
     -> 긴급 상황으로 분류해야 할 텍스트가 일반 상황으로 예측되거나, 일반적인 텍스트가 긴급 상황으로 잘못 예측되는 경우가 전체적으로 발생<br>
        이는 모델이 문맥의 미세한 차이를 제대로 반영하지 못한 결과로, 긴급도를 정확히 예측하는 데 있어 개선이 필요함을 시사
     
-  (2) BERT
+  (2) **BERT**
     - 단어의 의미를 문맥에 따라 파악할 수 있어, 감정 분석처럼 문장의 뉘앙스를 이해하는 작업에 매우 유리
     - 사전 훈련된 모델을 fine-tuning하여 성능을 더욱 최적화할 수 있기 때문에, 특정 도메인이나 데이터셋에 맞게 모델을 세부 조정 가능<br>
   => 결과)<br>
@@ -50,4 +72,28 @@
     - 멀티모달 데이터 결합 -> 텍스트 외에도 이미지, 음성 등 다양한 데이터를 결합하여 더 정교한 예측 가능 기대
 
  
-  
+## 🚀 설치 및 실행
+
+### 1. 의존성 설치
+```bash
+pip install -r requirements.txt
+```
+
+### 2. GloVe 임베딩 파일 다운로드
+```bash
+# data 폴더 생성
+mkdir -p data
+
+# GloVe 임베딩 다운로드 (100차원)
+# curl -O https://nlp.stanford.edu/data/glove.6B.zip
+# wget https://nlp.stanford.edu/data/glove.6B.zip
+curl -L -o glove.6B.zip https://nlp.stanford.edu/data/
+unzip glove.6B.zip
+mv glove.6B.100d.txt data/
+rm glove.6B.zip
+```
+
+### 3. 프로그램 실행
+```bash
+python3 main.py
+```
