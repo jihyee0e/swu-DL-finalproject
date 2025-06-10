@@ -1,9 +1,16 @@
+# 가상환경 및 캐시
 venv/
-
-.DS_Store
-
-*.ipynb
 __pycache__/
 
+# 시스템 파일
+.DS_Store
+
+# 주피터 노트북
+*.ipynb
+
+# 모델 파일
 *.h5
 *.pkl
+
+# 대용량 임베딩 파일
+data/glove.6B.100d.txt
