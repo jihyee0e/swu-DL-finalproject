@@ -1,8 +1,9 @@
-# 텍스트 기반의 감정 분석과 긴급도 탐지 모델링
+## 텍스트 기반의 감정 분석과 긴급도 탐지 모델링
 
 긴급 상황을 텍스트 데이터를 통해 예측 & 사전 예방적인 조치를 위한 기초를 다지는 시스템 개발
 
-## 📁 프로젝트 구조
+---
+### 📁 프로젝트 구조
 
 ```
 project/
@@ -20,9 +21,10 @@ project/
 ├── main.py               # 메인 실행 파일
 ├── requirements.txt      # 의존성 패키지
 └── README.md
-``` 
+```
 
-## process
+---
+### process
 
 - 데이터셋: kaggle - Emotion Detection from Text<br>
 ![image](https://github.com/user-attachments/assets/6b4a62e8-a3ed-4df2-ae32-d8412b05bfc5)
@@ -71,7 +73,7 @@ project/
     - 데이터 증강 -> 다양한 감정과 긴급 상황을 다룬 데이터셋을 추가하여 모델의 범용성 증대
     - 멀티모달 데이터 결합 -> 텍스트 외에도 이미지, 음성 등 다양한 데이터를 결합하여 더 정교한 예측 가능 기대
 
- 
+---
 ### 🚀 설치 및 실행
 
 1. 의존성 설치
