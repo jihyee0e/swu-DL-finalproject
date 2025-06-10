@@ -21,7 +21,7 @@ def preprocess_text(text):
     return text.lower().strip()
 
 # 데이터 로드 및 전처리 함수
-def load_and_preprocess_data(file_path="tweet_emotions.csv"):
+def load_and_preprocess_data(file_path="data/tweet_emotions.csv"):
     data = pd.read_csv(file_path)
     data['clean_text'] = data['content'].apply(preprocess_text)
     
