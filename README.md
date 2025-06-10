@@ -15,10 +15,10 @@ project/
 │   ├── preprocessing.py   # 공통 전처리 함수들
 │   └── visualization.py   # 그래프 그리기 함수들
 ├── data/
-│   └── glove.6B.100d.txt  # GloVe 임베딩 파일 (별도 다운로드 필요)
+│   ├── glove.6B.100d.txt  # GloVe 임베딩 파일 (별도 다운로드 필요)
+│   └── tweet_emotions.csv    # 데이터셋
 ├── main.py               # 메인 실행 파일
 ├── requirements.txt      # 의존성 패키지
-├── tweet_emotions.csv    # 데이터셋
 └── README.md
 ``` 
 
