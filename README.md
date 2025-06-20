@@ -18,6 +18,8 @@ project/
 ├── data/
 │   ├── glove.6B.100d.txt  # GloVe 임베딩 파일 (별도 다운로드 필요)
 │   └── tweet_emotions.csv    # 데이터셋
+├── origin_file/
+│   ├── final.ipynb       # 원래 코드
 ├── main.py               # 메인 실행 파일
 ├── requirements.txt      # 의존성 패키지
 └── README.md
